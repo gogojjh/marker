@@ -9,7 +9,7 @@ using namespace cv;
 
 Utilities::Utilities()
 {
-
+    ans_query.clear();
 }
 
 // extract the single channel
@@ -123,6 +123,7 @@ Mat Utilities::decectMarkerContour(Mat img)
                     {
                         pointsIn[j] = approxCurve[j];
                         circle(img_show,Point(pointsIn[j].x,pointsIn[j].y),8,Scalar(0,0,255));
+                        ans_query.push_back(pointsIn[j]);
                     }
                 }
                 else
@@ -139,6 +140,7 @@ Mat Utilities::decectMarkerContour(Mat img)
                     {
                         pointsIn[k++] = approxCurve[*tmp_itr];
                         circle(img_show,Point(pointsIn[k-1].x,pointsIn[k-1].y),8,Scalar(0,0,255));
+                        ans_query.push_back(pointsIn[k-1]);
                     }
                 }
 

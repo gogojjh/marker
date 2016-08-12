@@ -25,5 +25,8 @@ class Utilities
         Mat getPosition(Mat &img, Point2f* pointsIn);
         Mat result;
         //void argParams();
+
+        vector<Point> ans_query;
+
 };
 #endif
